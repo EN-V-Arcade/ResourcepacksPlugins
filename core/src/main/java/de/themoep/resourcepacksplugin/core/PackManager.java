@@ -62,12 +62,12 @@ public class PackManager {
     private Map<String, ResourcePack> packNames;
 
     /**
-     * packhash -> packname 
+     * packhash -> packname
      */
     private Map<String, ResourcePack> packHashes;
-    
+
     /**
-     * packurl -> packname 
+     * packurl -> packname
      */
     private Map<String, ResourcePack> packUrls;
 
@@ -75,12 +75,12 @@ public class PackManager {
      * The empty pack, null if none is set
      */
     private ResourcePack empty = null;
-    
+
     /**
      * Name of the global pack, null if none is set
      */
     private PackAssignment global = new PackAssignment("global");
-    
+
     /**
      * server-/worldname -> pack assignment
      */
@@ -273,7 +273,7 @@ public class PackManager {
     public ResourcePack getByName(String name) {
         return name != null ? packNames.get(name.toLowerCase(Locale.ROOT)) : null;
     }
-    
+
     /**
      * Get the resourcepack by its hash
      * @param hash The hash of the pack to get
@@ -436,7 +436,7 @@ public class PackManager {
     public List<String> getGlobalSecondary() {
         return new ArrayList<>(global.getSecondaries());
     }
-    
+
     /**
      * Get the resourcepack of a server
      * @param server The name of the server, "!global" for the global pack
@@ -447,7 +447,7 @@ public class PackManager {
     public ResourcePack getServerPack(String server) {
         return getByName(getAssignment(server).getPack());
     }
-    
+
     /**
      * Get the resourcepack of a user
      * @param playerid The UUID of this player
@@ -458,7 +458,7 @@ public class PackManager {
     public ResourcePack getUserPack(UUID playerid) {
         return plugin.getUserManager().getUserPack(playerid);
     }
-    
+
     /**
      * Set the resourcepack of a user
      * @param playerid The UUID of this player
@@ -481,7 +481,7 @@ public class PackManager {
     public ResourcePack clearUserPack(UUID playerid) {
         return plugin.getUserManager().clearUserPack(playerid);
     }
-    
+
 
     /**
      * Add a server to a resourcepack
@@ -556,7 +556,7 @@ public class PackManager {
         }
         return assignment;
     }
-    
+
     /**
      * Get all assignments
      * @return The all PackAssignments
